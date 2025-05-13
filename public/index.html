@@ -2,36 +2,303 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Music | Last.fm</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    <!-- Block header-->
+    <header class="header header--background-dark">
+      <div class="header__inner">
+        <a class="header__logo logo" href="../public/index.html">
+          <img class="header__image" src="../public/img/logo_last_fm.png" width="110" height="28" alt="..."/>
+        </a>
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Home</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Live</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Music</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Charts</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Events</a></li>
+            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Features</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- Block authors -->
+    <section class="authors-section">
+      <h1 class="header-1 text-center mt-1">Music</h1>
+      <h4 class="header-4 text-center header--short-underline">Hot right now</h4>
+      <section class="authors-section__authors-list">
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+        <article class="author-card">
+          <img class="author-card__img-rounded-half" src="../public/img/taylor_swft.webp" alt="..." loading="lazy" height="170" width="170"/>
+          <h4 class="author-card__author-name">Tayolor Swift</h4>
+          <span class="genre genre--ps-5">hip-hop rap hip hop</span>
+        </article>
+      </section>
+    </section>
+    <!-- Block popular tracks-->
+    <section class="tracks-section mb-1">
+      <h4 class="header-4 text-center header--short-underline">Popular tracks</h4>
+      <section class="tracks-section_popular-list">
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope </span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+        <article class="track-card">
+          <img src="../public/img/mona-lisa.webp" alt="..." height="70" width="70">
+          <div class="track-card__info">
+            <h4 class="author-card__track-name">Balming Tiger</h4>
+            <p class="author-card__track-author">j-hope</p>
+            <span class="genre">song of the year mona lisa jhope</span>
+          </div>
+        </article>
+      </section>
+    </section>
+    <!-- Block footer-->
+    <footer class="footer mt-1">
+      <div class="footer__menu">
+        <div class="footer__menu-column">
+          <h2 class="footer__menu-list-subheader">Company</h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">About Last.fm</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Contact Us</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Jobs</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu-column">
+          <h2 class="footer__menu-list-subheader">Help</h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Track My Music</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Community Support</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Community Guidelines</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Help</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu-column">
+          <h2 class="footer__menu-list-subheader">Goodies</h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Download Scrobbler</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Developer API</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Free Music Downloads</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Merchandise</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu-column">
+          <h2 class="footer__menu-list-subheader">Account</h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Inbox</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Settings</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Last.fm Pro</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Logout</a></li>
+          </ul>
+        </div>
+        <div class="footer__menu-column">
+          <h2 class="footer__menu-list-subheader">Follow us</h2>
+          <ul class="footer__menu-list">
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Facebook</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Twitter</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Instagram</a></li>
+            <li class="footer__menu-list-item"><a href="#" class="footer__menu-list-link">Youtube</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer__underline">
+      <div>
+      </div>
+    </footer>
   </body>
 </html>
