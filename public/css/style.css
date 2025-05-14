@@ -1,0 +1,223 @@
+:root{
+    
+}
+html, body{
+    height: 100%;
+    margin: 0px;
+    font-family: 'Barlow', 'Open Sans', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+/* Shortcuts */
+.mt-1{
+    margin-top: 8rem; /* fix */
+}
+.mb-5{
+    margin-bottom: 1rem;
+}
+/* Block header */
+.header{
+    height: 80px;
+    font-size: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0px;
+}
+.header--background-dark{
+    background-color: #000000;
+}
+.header__inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.header__menu-list{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.header__menu-item{
+    padding: 0 5px;
+}
+.header__menu-link--color{
+    color: white;
+    transition: color .4s;
+    text-decoration: none;
+}
+.header__menu-link--color:hover{
+    color: red;
+    text-decoration: underline;
+}
+/* Main part of page */
+.header-1{
+    font-size: 2.5rem;
+}
+.header-4{
+    font-size: 1rem;
+}
+.header--short-underline::after{
+    content: "";
+    background: #B80000; /*Вынести*/
+    height: 2px;
+    display: block;
+    width: 50px;
+    margin: 0px auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.text-center{
+    text-align: center;
+}
+/* Block author-section */
+.authors-section{
+    /* width: 90%;
+    margin: 0 auto; */
+}
+.author-card{
+}
+.authors-section__authors-list{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 2;
+    gap: 20px;
+    width: 1140px;
+    margin: auto;
+}
+.author-card__author-name{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0px;
+}
+.genre{
+    color: grey;
+    font-size: 0.75rem;
+}
+.genre--ps-5{
+    margin-left: 5px;
+}
+.author-card__img-rounded-half{
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+/* Block popular-tracks */
+.tracks-section_popular-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 70px);
+    gap: 20px 20px;
+    width: 1140px;
+    margin: auto;
+}
+.track-card{
+    display: flex;
+}
+.track-card__info{
+    margin-left: 15px;
+}
+.author-card__track-name{
+    font-size: 1rem;
+    padding: 3px 0;
+    margin: 0px;
+}
+.author-card__track-author{
+    margin: 0px;
+    padding-bottom: 3px;
+}
+/* Block footer */
+/* Footer top */
+.footer{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+.footer__menu{
+    height: 50%;
+    width: 80%;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer__menu-list-subheader{
+    text-transform: uppercase;
+    color: grey;
+    font-size: 0.75rem;
+    margin: 0px;
+    padding: 0 5px;
+}
+.footer__menu-list{
+    margin: 0px;
+    padding: 5px;
+    text-align: left;
+    list-style: none;
+}
+.footer__menu-list-link{
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.footer__menu-list-link:hover{
+    text-decoration: underline;
+}
+.footer__underline{
+    margin: 0px;
+}
+/* Footer bottom */
+.footer__bottom{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.footer__languages-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0px;
+}
+.footer__languages-list-item{
+    padding-right: 10px;
+    color: grey;
+}
+.footer__time-zone{
+    color: grey;
+}
+.footer__copyright{
+    color: grey;
+}
+.footer__copyright-list{
+    display: inline;
+    padding: 0px;
+    list-style-type: disc;
+}
+.footer__copyright-item{
+    display: inline;
+}
+.footer__copyright-link{
+    padding-left: 2px;
+    text-decoration: none;
+    color: grey;
+}
+.footer__copyright-link:hover{
+    text-decoration: underline;
+}
+.footer__copyright-item::before{
+    content: "•"
+}
+/* Media queries for adaptive */
+/* Size for authors, tracks section*/
+@media (max-width: 1220px){
+    .authors-section__authors-list{
+        width: 960px;
+    }
+    .tracks-section_popular-list{
+        width: 960px;
+    }
+}
