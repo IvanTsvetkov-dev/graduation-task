@@ -1,11 +1,21 @@
 :root{
-    
+    --color-primary: rgb(255, 255, 255);
+    --color-secondary: rgb(0, 0, 0);
+    --color-red: rgb(255, 0, 0);
+    --color-link: #B80000;
+    --color-grey: grey;
+    --color-second-grey: #FAFAFA;
 }
 html, body{
     height: 100%;
     margin: 0px;
     font-family: 'Barlow', 'Open Sans', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+}
+.body-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 /* Shortcuts */
 .mt-1{
@@ -16,15 +26,11 @@ html, body{
 }
 /* Block header */
 .header{
-    height: 80px;
+    min-height: 80px;
     font-size: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    top: 0px;
 }
 .header--background-dark{
-    background-color: #000000;
+    background-color: var(--color-secondary)
 }
 .header__inner{
     height: 100%;
@@ -39,28 +45,27 @@ html, body{
     margin: 0px;
     padding: 0px;
 }
+.icon-search{
+    width: 16px;
+    height: 16px;
+    color: var(--color-primary);
+    text-decoration: none;
+}
 .header__menu-item{
     padding: 0 5px;
 }
 .header__menu-link--color{
-    color: white;
+    color: var(--color-primary);
     transition: color .4s;
     text-decoration: none;
 }
 .header__menu-link--color:hover{
-    color: red;
     text-decoration: underline;
 }
 /* Main part of page */
-.header-1{
-    font-size: 2.5rem;
-}
-.header-4{
-    font-size: 1rem;
-}
 .header--short-underline::after{
     content: "";
-    background: #B80000; /*Вынести*/
+    background: var(--color-link); /*Вынести*/
     height: 2px;
     display: block;
     width: 50px;
@@ -68,16 +73,17 @@ html, body{
     margin-top: 15px;
     margin-bottom: 30px;
 }
-
 .text-center{
     text-align: center;
 }
 /* Block author-section */
-.authors-section{
-    /* width: 90%;
-    margin: 0 auto; */
+.main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
-.author-card{
+.main--bg-color{
+    background-color: var(--color-second-grey);
 }
 .authors-section__authors-list{
     display: grid;
@@ -93,7 +99,7 @@ html, body{
     margin: 0px;
 }
 .genre{
-    color: grey;
+    color: var(--color-grey);
     font-size: 0.75rem;
 }
 .genre--ps-5{
@@ -131,7 +137,7 @@ html, body{
 /* Block footer */
 /* Footer top */
 .footer{
-    background-color: black;
+    background-color: var(--color-secondary);
     display: flex;
     flex-direction: column;
 }
@@ -147,7 +153,7 @@ html, body{
 }
 .footer__menu-list-subheader{
     text-transform: uppercase;
-    color: grey;
+    color: var(--color-grey);
     font-size: 0.75rem;
     margin: 0px;
     padding: 0 5px;
@@ -184,13 +190,13 @@ html, body{
 }
 .footer__languages-list-item{
     padding-right: 10px;
-    color: grey;
+    color: var(--color-grey);
 }
 .footer__time-zone{
-    color: grey;
+    color: var(--color-grey);
 }
 .footer__copyright{
-    color: grey;
+    color: var(--color-grey);
 }
 .footer__copyright-list{
     display: inline;
@@ -203,13 +209,115 @@ html, body{
 .footer__copyright-link{
     padding-left: 2px;
     text-decoration: none;
-    color: grey;
+    color: var(--color-grey);
 }
 .footer__copyright-link:hover{
     text-decoration: underline;
 }
 .footer__copyright-item::before{
     content: "•"
+}
+/* Search page */
+.search-section{
+    width: 100%;
+}
+.search-section__inner{
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+.search-section__items{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    gap: 30px;
+    list-style: none;
+}
+.search-section::after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    opacity: 0.1;
+    margin-top: -1px;
+    background-color: var(--color-grey);
+}
+.search-section__link{
+    color: black;
+    text-decoration: none;
+}
+.search-section__link::after{
+    content: "";
+    background: var(--color-link);
+    height: 2px;
+    display: block;
+    width: 50px;
+    margin: 0px auto;
+    margin-top: 15px;
+}
+.main__result-search{
+    flex-grow: 1;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1170px;
+    margin-top: 24px;
+}
+.main__left-side{
+    padding-right: 15px;
+    background-color: blanchedalmond;
+}
+.input-search{
+}
+.right-side{
+}
+/* Authors section in search page*/
+.grid-items{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    gap: 0;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-items__item{
+    height: 192px;
+    width: 192px;
+    position: relative;
+}
+.grid-items__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.grid-items__text-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    color: var(--color-primary);
+    z-index: 9999;
+}
+.grid-items__text{
+    display: block;
+    margin: 0px;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.grid-items__header{
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+.grid-items__subtext{
+    font-size: 0.75rem;
+}
+.grid-items__item .grid-items__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 /* Media queries for adaptive */
 /* Size for authors, tracks section*/
