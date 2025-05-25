@@ -270,7 +270,7 @@ html, body{
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    width: 1070px;
+    width: 1170px;
     margin-top: 24px;
     flex-wrap: wrap;
 }
@@ -343,7 +343,7 @@ html, body{
     width: 192px;
     position: relative;
 }
-.grid-items__item img {
+.grid-items__item-image{
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -408,10 +408,10 @@ html, body{
     width: 100%;
     border-collapse: collapse;
 }
-table.tracks__charts tbody tr:hover {
+.tracks__tr:hover{
     background: var(--color-grey-opacity-half)
 }
-table.tracks__charts td {
+.tracks__elem{
     padding: 12px 0;
 }
 .icon-play{
@@ -433,7 +433,11 @@ table.tracks__charts td {
     width: 40px;
     height: 40px;
 }
-.tracks__image img{
+.tracks__image{
+    width: 40px;
+    height: 40px;
+}
+.tracks__image-img{
     width: 40px;
     height: 40px;
     border-radius: 6px;
