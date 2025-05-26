@@ -116,9 +116,10 @@ html, body{
     margin-bottom: 0px;
 }
 .genre-list--ps-5{
-    margin-left: 5px;
+    margin-left: 0px;
 }
 .genre-list_item{
+    margin-right: 5px;
     display: inline;
 }
 .genre-list_item-link{
