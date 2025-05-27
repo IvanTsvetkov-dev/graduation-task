@@ -115,7 +115,7 @@ function createGridItem({imageSrc, headerText, headerLink, subtext}) {
 /** 
 * Создаёт DOM-элемент ячейка таблицы с треком.
 * @param {object} params - Параметры для создания ячеки.
-* @param {string} params.imgageSrc - URL изображения картинка трека.
+* @param {string} params.imgaSrc - URL изображения картинка трека.
 * @param {string} params.trackName - Название трека.
 * @param {string} params.trackLink - URL трека.
 * @param {string} params.authorName - Имя автора.
