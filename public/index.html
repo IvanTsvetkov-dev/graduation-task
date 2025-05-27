@@ -23,7 +23,14 @@
           </a>
           <nav class="header__menu">
             <ul class="header__menu-list">
-              <li><a href="" class="icon-search"></a></li>
+              <li class="header__menu-item">
+                <div class="header__wrapper-search">
+                  <form class="header__form-search form-search" action="search-page.html" method="get">
+                    <input name="query" class="form-search__input" placeholder="Search for music..." type="search">
+                    <button class="form-search__button icon-search" type="submit"></button>
+                  </form>
+                </div>
+              </li>
               <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Home</a></li>
               <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Live</a></li>
               <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Music</a></li>
@@ -46,7 +53,6 @@
         <section class="tracks-section mb-1">
           <h4 class="header-4 text-center header--short-underline">Popular tracks</h4>
           <section class="tracks-section_popular-list">
-            
           </section>
         </section>
       </main>

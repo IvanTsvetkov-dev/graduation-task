@@ -46,14 +46,12 @@ html, body{
     margin: 0px;
     padding: 0px;
 }
-.icon-search{
-    width: 16px;
-    height: 16px;
-    color: var(--color-primary);
-    text-decoration: none;
+.header__wrapper-search{
+    width: 350px;
 }
 .header__menu-item{
     padding: 0 5px;
+    align-self: center;
 }
 .header__menu-link--color{
     color: var(--color-primary);
@@ -384,7 +382,7 @@ html, body{
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: brightness(70%);
+    filter: brightness(80%);
 }
 .grid-items__text-overlay{
     position: absolute;

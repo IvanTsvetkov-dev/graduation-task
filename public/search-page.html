@@ -12,20 +12,27 @@
     <!-- Block header-->
     <header class="header header--background-dark">
         <div class="header__inner">
-        <a class="header__logo logo" href="../public/index.html">
+          <a class="header__logo logo" href="../public/index.html">
             <img class="header__image" src="../public/img/logo_last_fm.png" width="110" height="28" alt="..."/>
-        </a>
-        <nav class="header__menu">
+          </a>
+          <nav class="header__menu">
             <ul class="header__menu-list">
-            <li><a href="" class="icon-search"></i></a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Home</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Live</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Music</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Charts</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Events</a></li>
-            <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Features</a></li>
+              <li class="header__menu-item">
+                <div class="header__wrapper-search">
+                  <form class="header__form-search form-search" action="search-page.html" method="get">
+                    <input name="query" class="form-search__input" placeholder="Search for music..." type="search">
+                    <button class="form-search__button " type="submit"></button>
+                  </form>
+                </div>
+              </li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Home</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Live</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Music</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Charts</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Events</a></li>
+              <li class="header__menu-item"><a href="#" class="header__menu-link header__menu-link--color">Features</a></li>
             </ul>
-        </nav>
+          </nav>
         </div>
     </header>
     <main class="main main--bg-color">
@@ -43,76 +50,12 @@
         <div class="main__result-search">
             <div class="main__left-side">
                 <form class=" main__form-search form-search" action="" method="get">
-                    <input class="form-search__input" placeholder="Search for music..." type="search">
+                    <input name="query" class="form-search__input" placeholder="Search for music..." type="search">
                     <button class="form-search__button icon-search" type="submit"></button>
                 </form>
                 <div class="artists">
                     <h2 class="grid-header"><a href="" class="grid_header__link">Artists</a></h2>
-                    <ul class="grid-items">
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <a class="grid-items__text grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/taylor_swft.webp" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Never Gonna Give You Up</a>
-                                <span class="grid-items__subtext">1,751 listeners</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
+                    <ul class="artists__grid-items grid-items">
                     </ul>
                     <p class="more-link">
                         <a class="more-link__link" href="">More artists</a>
@@ -120,72 +63,7 @@
                 </div>
                 <div class="albums">
                     <h2 class="grid-header"><a href="" class="grid_header__link">Albums</a></h2>
-                    <ul class="grid-items">
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-                        <li class="grid-items__item">
-                            <img class="grid-items__item-image" src="../public/img/hybrid_theory.jpg" alt="img">
-                            <div class="grid-items__text-overlay">
-                                <a href="#" class="grid-items__text grid-items__header">Hybrid Theory</a>
-                                <a href="#" class="grid-items__text grid-items__subtext grid-items__subtext-author">Linkin Park</a>
-                            </div>
-                            <a href="#" class="grid-items__link"></a>
-                        </li>
-
+                    <ul class="albums__grid-items grid-items">
                     </ul>
                     <p class="more-link">
                         <a class="more-link__link" href="">More artists</a>
@@ -199,14 +77,6 @@
                             </tr>
                         </thead>
                         <tbody class="tracks__body">
-                            <tr class="tracks__tr">
-                                <td class="tracks__elem tracks__play"><a class="icon-play"></a></td>
-                                <td class="tracks__elem tracks__image"><img class="tracks__image-img" src="../public/img/The Beatles.webp" alt="The Beatles"></td>
-                                <td class="tracks__elem tracks__like"><a class="icon-heart-empty"></a></td>
-                                <td class="tracks__elem tracks__name"><a href="" class="tracks__name-link">Yesterday - Remastered 2009</a></td>
-                                <td class="tracks__elem tracks__author"><a href="" class="tracks__author-link">The Beatles</a></td>
-                                <td class="tracks__elem tracks__duration">2:05</td>
-                            </tr>
                         </tbody>
                     </table>
                     <p class="more-link">
@@ -301,6 +171,7 @@
         </div>
         </div>
     </footer>
+    <script src="../public/js/script-search.js"></script>
 </div>
 </body>
 </html>
