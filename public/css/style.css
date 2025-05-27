@@ -357,7 +357,6 @@ html, body{
 }
 /* Authors section in search page*/
 .artists{
-
 }
 .grid_header__link{
     text-decoration: none;
@@ -369,7 +368,7 @@ html, body{
     padding: 0px;
     margin: 0px;
     display: grid;
-    gap: 0;
+    gap: 0px;
     grid-template-columns: repeat(4, 1fr);
 }
 .grid-items__item{

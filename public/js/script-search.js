@@ -1,69 +1,54 @@
 const API_KEY = '18c671e0779ec3b93335884680854000'
 const BASE_URL = 'http://ws.audioscrobbler.com/2.0/'
 
-/* Save links for dom elements */
+/* Ссылки на DOM элементы */
 const searchString = document.querySelector('.search-section__header');
 const searchAuthors = document.querySelector('.artists__grid-items');
 const searchAlbums = document.querySelector('.albums__grid-items')
 const searchTracks = document.querySelector('.tracks__body');
 
-/* Take query parameters */
+/* Вытягивание query параметров */
 const params = new URLSearchParams(window.location.search);
 const query = params.get('query');
 
 searchString.textContent = `Search results for "${query}"`;
 
-async function fetchSearchAuthors(authorName) {
+/** 
+* Общая функция, которая асинхронно запрашивает данные с API в соотвествии с поисковым запросом. 
+* В случае успешного ответа возвращает промис
+* В случае ошибки выбрасывает исключение с описанием проблемы.
+* @param {string} method имя метода: track.search, album.search и тд.
+* @param {string} paramName имя параметра поиска: track, album и тд.
+* @param {string} paramValue значение параметра поиска.
+* @param {string} limit максимальное число полученных записей.
+* @return {promise} Возвращает промис, fulfilled: Массив объектов авторов, rejected: данные об ошибке.
+* @throws {error} Если код ответа не 200 или структура данных не корректна
+*/
+async function fetchSearchData({method, paramName, paramValue, limit = 10}){
 	try {
 		const response = await fetch(
-			`${BASE_URL}?method=artist.search&artist=${authorName}&api_key=${API_KEY}&format=json&limit=8`
-		);
-		if (response.status != 200)
-			throw new Error(`Error! Http code: ${response.status}`);
-		const data = await response.json();
-		if (!data.results.artistmatches.artist) {
-			throw new Error(`There isn't fields`)
-		}
-		return data.results.artistmatches.artist
- 	} catch (e) {
-		throw Error(e)
-	}
-}
-
-async function fetchSearchAlbums(albumName){
-	try {
-		const response = await fetch(
-			`${BASE_URL}?method=album.search&album=${albumName}&api_key=${API_KEY}&format=json&limit=6`
-		)
-		if (response.status != 200)
-			throw new Error(`Error! Http code: ${response.status}`);
-		const data = await response.json();
-		if (!data.results.albummatches.album) {
-			throw new Error(`There isn't fields`)
-		}
-		return data.results.albummatches.album
- 	} catch (e) {
-		throw Error(e)
-	}
-}
-
-async function fetchSearchTracks(trackName){
-	try {
-		const response = await fetch(
-			`${BASE_URL}?method=track.search&track=${trackName}&api_key=${API_KEY}&format=json&limit=10`
+			`${BASE_URL}?method=${method}&${paramName}=${paramValue}&api_key=${API_KEY}&format=json&limit=${limit}`
 		)
 		if (response.status != 200)
 			throw new Error(`Error! Http code: ${response.status}`)
 		const data = await response.json()
-		if (!data.results.trackmatches.track) {
-			throw new Error(`There isn't fields`)
+		if (!data) {
+			throw new Error(`There isn't data`)
 		}
-		return data.results.trackmatches.track
+		return data
 	} catch (e) {
 		throw Error(e)
 	}
 }
-
+/** 
+* Асинхронно запрашивает подробные данные о треке
+* В случае успешного ответа возвращает промис
+* В случае ошибки выбрасывает исключение с описанием проблемы
+* @param {string} trackName название трека.
+* @param {string} artistName псевдоним(имя) артиста.
+* @return {promise} Возвращает промис, fulfilled: Объект трек, rejected: данные об ошибке.
+* @throws {error} Если код ответа не 200 или структура данных не корректна
+*/
 async function fetchTrackDetail(trackName, artistName){
 	try {
 		const response = await fetch(
@@ -80,7 +65,15 @@ async function fetchTrackDetail(trackName, artistName){
 		throw Error(e)
 	}
 }
-
+/** 
+* Создаёт DOM-элемент универсальную ячейку грид(используется как для отрисовки авторов, так и альбомов).
+* @param {object} params - Параметры для создания ячейки.
+* @param {string} params.imgSrc - URL изображения автора.
+* @param {string} params.headerText - Название карточки.
+* @param {string} params.headerLink - Ссылка на подробности карточки.
+* @param {string} params.subtext - Подзаголовок карточки.
+* @returns {HTMLElement} DOM-элемент `<li>` с грид ячейкой.
+*/
 function createGridItem({imageSrc, headerText, headerLink, subtext}) {
 	const li = document.createElement('li');
 	li.className = 'grid-items__item';
@@ -119,7 +112,17 @@ function createGridItem({imageSrc, headerText, headerLink, subtext}) {
 
 	return li;
 }
-
+/** 
+* Создаёт DOM-элемент ячейка таблицы с треком.
+* @param {object} params - Параметры для создания ячеки.
+* @param {string} params.imgageSrc - URL изображения картинка трека.
+* @param {string} params.trackName - Название трека.
+* @param {string} params.trackLink - URL трека.
+* @param {string} params.authorName - Имя автора.
+* @param {string} params.authorLink - URL автора.
+* @param {string} params.duration - Продолжительность трека.
+* @returns {HTMLElement} DOM-элемент `<tr>` грид ячейка с данными о треке.
+*/
 function createTrackRow({imageSrc, trackName, trackLink, authorName, authorLink, duration}) {
 	const tr = document.createElement('tr')
 	tr.className = 'tracks__tr'
@@ -176,54 +179,87 @@ function createTrackRow({imageSrc, trackName, trackLink, authorName, authorLink,
 
 	return tr
 }
-
-fetchSearchAuthors(query)
-    .then(artistsList => {
-        for(let i = 0; i < artistsList.length; i++){
-            const artistCard = createGridItem({
-							imageSrc: artistsList[i].image[2]['#text'],
-							headerText: artistsList[i].name,
-							headerLink: artistsList[i].url,
-							subtext: artistsList[i].listeners + ' listeners',
-						})
-			searchAuthors.append(artistCard)			
-        }
-    });
-
-fetchSearchAlbums(query)
-	.then(albumsList => {
-		for (let i = 0; i < albumsList.length; i++) {
-			const albumCard = createGridItem({
-				imageSrc: albumsList[i].image[2]['#text'],
-				headerText: albumsList[i].name,
-				headerLink: albumsList[i].url,
-				subtext: albumsList[i].listeners,
-			})
-			searchAlbums.append(albumCard)
+/* Запрос артистов в соответсвии с поисковым запросом */
+fetchSearchData({
+	method: 'artist.search',
+	paramName: 'artist',
+	paramValue: query,
+	limit: 8,
+})
+	.then(data => {
+		try {
+			const artistsList = data.results.artistmatches.artist
+			for (let i = 0; i < artistsList.length; i++) {
+				const artistCard = createGridItem({
+					imageSrc: artistsList[i].image[2]['#text'],
+					headerText: artistsList[i].name,
+					headerLink: artistsList[i].url,
+					subtext: artistsList[i].listeners + ' listeners',
+				})
+				searchAuthors.append(artistCard)
+			}
+		} catch (e) {
+			console.error('The object have invalid key')
 		}
 	})
-
-fetchSearchTracks(query)
-	.then(tracksList => {
-		console.log(tracksList);
-		for(let i = 0; i < tracksList.length; i++){
-			fetchTrackDetail(tracksList[i].name, tracksList[i].artist)
-				.then(
-					trackDetail => {
-						const trackCard = createTrackRow({
-							imageSrc: tracksList[i].image[2]['#text'],
-							trackName: tracksList[i].name,
-							trackLink: tracksList[i].url,
-							authorName: tracksList[i].artist,
-							authorLink: trackDetail.artist.url,
-							duration: msToMinutesSeconds(trackDetail.duration),
-						})
-						searchTracks.append(trackCard)
-					}
-				)
+	.catch(err =>
+		console.error(err)
+	)
+/* Запрос альбомов в соответствии с поисковым запросом */
+fetchSearchData({
+	method: 'album.search',
+	paramName: 'album',
+	paramValue: query,
+	limit: 8,
+	})
+	.then(data => {
+		try{
+			const albumsList = data.results.albummatches.album;
+			for (let i = 0; i < albumsList.length; i++) {
+				const albumCard = createGridItem({
+					imageSrc: albumsList[i].image[2]['#text'],
+					headerText: albumsList[i].name,
+					headerLink: albumsList[i].url,
+					subtext: albumsList[i].listeners,
+				})
+				searchAlbums.append(albumCard)
+			}
+		} catch(e){
+			console.error(e);
 		}
 	})
-
+	.catch(err => console.error(err));
+/* Запрос треков в соответствии с поисковым запросом */
+fetchSearchData({
+	method: 'track.search',
+	paramName: 'track',
+	paramValue: query,
+	limit: 8,
+})
+	.then(data => {
+		const tracksList = data.results.trackmatches.track;
+		for (let i = 0; i < tracksList.length; i++) {
+			fetchTrackDetail(tracksList[i].name, tracksList[i].artist).then(
+				trackDetail => {
+					const trackCard = createTrackRow({
+						imageSrc: tracksList[i].image[2]['#text'],
+						trackName: tracksList[i].name,
+						trackLink: tracksList[i].url,
+						authorName: tracksList[i].artist,
+						authorLink: trackDetail.artist.url,
+						duration: msToMinutesSeconds(Number(trackDetail.duration)),
+					})
+					searchTracks.append(trackCard)
+				}
+			)
+		}
+	})
+	.catch(err => console.error(err))
+/** 
+* Переводит ms в формат mm:ss.
+* @param {Number} params.duration - Продолжительность трека.
+* @returns {HTMLElement} DOM-элемент `<tr>` грид ячейка с данными о треке.
+*/
 function msToMinutesSeconds(ms) {
 	const totalSeconds = Math.floor(ms / 1000);
 	const minutes = Math.floor(totalSeconds / 60)
