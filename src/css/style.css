@@ -1,0 +1,541 @@
+:root{
+    --color-primary: rgb(255, 255, 255);
+    --color-secondary: rgb(0, 0, 0);
+    --color-red: rgb(255, 0, 0);
+    --color-link: #B80000;
+    --color-grey: grey;
+    --color-second-grey: #FAFAFA;
+    --color-grey-opacity-half: rgba(128, 128, 128, 0.1)
+}
+html, body{
+    height: 100%;
+    margin: 0px;
+    font-family: 'Barlow', 'Open Sans', 'Lucida Grande', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+.body-wrapper{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+/* Shortcuts */
+.mt-1{
+    margin-top: 8rem; /* fix */
+}
+.mb-5{
+    margin-bottom: 1rem;
+}
+/* Block header */
+.header{
+    min-height: 80px;
+    font-size: 1rem;
+}
+.header--background-dark{
+    background-color: var(--color-secondary)
+}
+.header__inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+.header__menu-list{
+    display: flex;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.header__wrapper-search{
+    width: 350px;
+}
+.header__menu-item{
+    padding: 0 5px;
+    align-self: center;
+}
+.header__menu-link--color{
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.header__menu-link--color:hover{
+    text-decoration: underline;
+}
+/* Main part of page */
+.header--short-underline::after{
+    content: "";
+    background: var(--color-link); /*Вынести*/
+    height: 2px;
+    display: block;
+    width: 50px;
+    margin: 0px auto;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+.text-center{
+    text-align: center;
+}
+/* Block author-section */
+.main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.main--bg-color{
+    background-color: var(--color-second-grey);
+}
+.authors-section__authors-list{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 2;
+    gap: 20px;
+    width: 1140px;
+    margin: auto;
+}
+.author-card__author-name{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0px;
+    display: block;
+    text-decoration: none;
+    color: var(--color-secondary);
+}
+.author-card__author-name:hover{
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0px;
+    display: block;
+    text-decoration: underline;
+}
+.genre-list{
+    font-size: 0.75rem;
+    list-style-type: none;
+    margin-top: 5px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+.genre-list--ps-5{
+    margin-left: 0px;
+}
+.genre-list_item{
+    margin-right: 5px;
+    display: inline;
+}
+.genre-list_item-link{
+    color: var(--color-grey);
+    text-decoration: none;
+}
+.genre-list_item-link:hover{
+    text-decoration: underline;
+}
+.author-card__img-rounded-half{
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+}
+/* Block popular-tracks */
+.tracks-section_popular-list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 70px);
+    gap: 20px 20px;
+    width: 1140px;
+    margin: auto;
+}
+.track-card{
+    display: flex;
+}
+.track-card__info{
+    margin-left: 15px;
+}
+.author-card__track-name{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--color-secondary);
+    font-size: 1rem;
+    padding: 3px 0;
+    margin: 0px;
+}
+.author-card__track-name:hover{
+    text-decoration: underline;
+}
+.author-card__track-author{
+    text-decoration: none;
+    color: var(--color-secondary);
+    margin: 0px;
+    padding-bottom: 3px;
+}
+.author-card__track-author:hover{
+    text-decoration: underline;
+}
+/* Block footer */
+/* Footer top */
+.footer{
+    background-color: var(--color-secondary);
+    display: flex;
+    flex-direction: column;
+}
+.footer__menu{
+    height: 50%;
+    width: 80%;
+    padding: 20px 0;
+    margin: 0 auto;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer__menu-list-subheader{
+    text-transform: uppercase;
+    color: var(--color-grey);
+    font-size: 0.75rem;
+    margin: 0px;
+    padding: 0 5px;
+}
+.footer__menu-list{
+    margin: 0px;
+    padding: 5px;
+    text-align: left;
+    list-style: none;
+}
+.footer__menu-list-link{
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+.footer__menu-list-link:hover{
+    text-decoration: underline;
+}
+.footer__underline{
+    margin: 0px;
+}
+/* Footer bottom */
+.footer__bottom{
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+.footer__languages-list{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: start;
+    padding: 0px;
+}
+.footer__languages-list-item{
+    padding-right: 10px;
+    color: var(--color-grey);
+}
+.footer__time-zone{
+    color: var(--color-grey);
+}
+.footer__copyright{
+    color: var(--color-grey);
+}
+.footer__copyright-list{
+    display: inline;
+    padding: 0px;
+    list-style-type: disc;
+}
+.footer__copyright-item{
+    display: inline;
+}
+.footer__copyright-link{
+    padding-left: 2px;
+    text-decoration: none;
+    color: var(--color-grey);
+}
+.footer__copyright-link:hover{
+    text-decoration: underline;
+}
+.footer__copyright-item::before{
+    content: "•"
+}
+/* Search page */
+.search-section{
+    width: 100%;
+}
+.search-section__inner{
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 1170px;
+}
+.search-section__items{
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    gap: 30px;
+    list-style: none;
+}
+.search-section::after{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    opacity: 0.1;
+    margin-top: -1px;
+    background-color: var(--color-grey);
+}
+.search-section__link{
+    color: black;
+    text-decoration: none;
+}
+.search-section__items > li:first-child > .search-section__link::after {
+    content: "";
+    background: var(--color-link);
+    height: 2px;
+    display: block;
+    width: 50px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+/* .search-section__link:hover::after{
+    content: "";
+    background: var(--color-link);
+    height: 2px;
+    display: block;
+    width: 50px;
+    margin: 0px auto;
+    margin-top: 15px;
+} */
+.main__result-search{
+    flex-grow: 1;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1170px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+.main__left-side{
+    padding: 0px 15px;
+}
+/* Search form */
+.form-search {
+  position: relative;
+  width: 100%;
+}
+.form-search__input{
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: 3px solid var(--color-grey-opacity-half);
+  border-radius: 5px;
+  outline: none;
+}
+/* color for input palceholder*/
+.form-search__input::-webkit-input-placeholder {
+    color: var(--color-grey); 
+    font-style: italic; 
+}
+.form-search__input:-moz-placeholder {
+  color: var(--color-grey);  
+  font-style: italic; 
+}
+.form-search__input:-ms-input-placeholder {
+  color: var(--color-grey); 
+  font-style: italic; 
+}
+.form-search__button{
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: var(--color-primary);
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  border: 3px solid var(--color-grey-opacity-half);
+}
+.form-search .icon-search{
+    color: var(--color-grey);
+}
+.form-search__button:before {
+  font-size: 16px;
+}
+/* Authors section in search page*/
+.artists{
+}
+.grid_header__link{
+    text-decoration: none;
+    font-weight: 100;
+    color: var(--color-secondary);
+}
+.grid-items{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: grid;
+    gap: 0px;
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-items__item{
+    height: 192px;
+    width: 192px;
+    position: relative;
+}
+.grid-items__item-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(80%);
+}
+.grid-items__text-overlay{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    color: var(--color-primary);
+    z-index: 9999;
+}
+.grid-items__text{
+    display: block;
+    margin: 0px;
+    text-decoration: none;
+    color: var(--color-primary);
+}
+.grid-items__header{
+    z-index: 3;
+    font-weight: bolder;
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+.grid-items__header:hover{
+    text-decoration: underline;
+}
+.grid-items__subtext{
+    font-size: 0.75rem;
+}
+.grid-items__subtext-author:hover{
+    text-decoration: underline;
+}
+.grid-items__item .grid-items__link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.more-link{
+    text-align: end;
+}
+.more-link__link{
+    text-decoration: none;
+}
+.more-link__link:hover{
+    text-decoration: underline;
+}
+.more-link__link::after{
+    content: "  >";
+    width: 12px;
+    height: 12px;
+}
+/* Charts table  */
+.tracks{
+    width: 100%;
+}
+.tracks__charts{
+    width: 100%;
+    border-collapse: collapse;
+}
+.tracks__tr:hover{
+    background: var(--color-grey-opacity-half)
+}
+.tracks__elem{
+    padding: 12px 0;
+}
+.icon-play{
+    font-size: 1.5rem;
+}
+.icon-heart-empty{
+    color: var(--color-grey);
+    font-size: 1.25rem;
+}
+.icon-heart-empty:hover{
+    color: var(--color-link);
+    font-size: 1.25rem;
+}
+.tracks__play{
+    text-align: center;
+    cursor: pointer;
+}
+.tracks__image{
+    width: 40px;
+    height: 40px;
+}
+.tracks__image{
+    width: 40px;
+    height: 40px;
+}
+.tracks__image-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+.tracks__like{
+    text-align: center;
+}
+.tracks__name {
+    font-weight: bold;
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+}
+.tracks__name-link{
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+.tracks__name-link:hover{
+    text-decoration: underline;
+}
+.tracks__author {
+    color: var(--color-grey);
+}
+.tracks__author-link{
+    text-decoration: none;
+    color: var(--color-grey);
+}
+.tracks__author-link:hover{
+    text-decoration: underline
+}
+.tracks__duration {
+    color: var(--color-grey);
+    text-align: center;
+    font-size: 0.85rem;
+}
+.tracks__download{
+    color: var(--color-grey);
+    text-decoration: none;
+}
+.tracks__additional{
+    color: var(--color-grey);
+}
+.right-side {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 15px;
+}
+
+.right-side__text,
+.right-side__link {
+  white-space: nowrap;
+}
+/* Media queries for adaptive */
+/* Size for authors, tracks section*/
+@media (max-width: 1220px){
+    .authors-section__authors-list{
+        width: 960px;
+    }
+    .tracks-section_popular-list{
+        width: 960px;
+    }
+    .search-section__inner{
+        width: 1000px;
+    }
+    .main__result-search{
+        width: 1000px;
+    }
+}
